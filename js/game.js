@@ -17,6 +17,11 @@ function onBallClick(elBall, maxDiameter) {
         var elBallColor = elBalls[1].style.backgroundColor
         elBalls[1].style.backgroundColor = elBalls[0].style.backgroundColor
         elBalls[0].style.backgroundColor = elBallColor
+        return
+    }
+    if (elBall === elBalls[3]) {
+        if (parseInt(elBalls[0].style.height) >= 100) changeBallSize(0)
+        if (parseInt(elBalls[1].style.height) >= 100) changeBallSize(1)
     } else {
         var elBallSize = elBall.offsetWidth
         elBallSize += getRandomInt(20, 60)
@@ -26,4 +31,19 @@ function onBallClick(elBall, maxDiameter) {
         elBall.style.width = elBallSize + 'px'
         elBall.innerHTML = elBallSize
     }
+}
+
+function changeBallSize(i) {
+    var elBallSize = parseInt(elBalls[i].style.height)
+    var ranDiff = getRandomInt(20, 60)
+    if (elBallSize < 100) {
+        elBalls[i].style.height = 100 + 'px'
+        elBalls[i].style.width = 100 + 'px'
+    } else {
+        var newSize = elBallSize - ranDiff
+        if(newSize < 100) newSize = 100
+    }
+    elBalls[i].style.height = newSize + 'px'
+    elBalls[i].style.width = newSize + 'px'
+    elBalls[i].innerText = newSize
 }
