@@ -7,10 +7,10 @@ body {
     color: rgb(241, 241, 241);
 }
 
-.ball1 {
+.ball {
     display: flex;
-    background-color: rgb(238, 238, 238);
-    color: rgb(47, 47, 47);
+    /* background-color: rgb(238, 238, 238); */
+    color: rgb(94, 59, 59);
     font-size: 22px;
     font-weight: bold;
     height: 100px;
@@ -22,3 +22,11 @@ body {
     transition: ease-in-out 0.2s;
 }
 
+.ball1 {
+    background-color: rgb(255, 161, 161);
+
+}
+.ball2 {
+    background-color: rgb(161, 255, 167);
+
+}

@@ -1,15 +1,13 @@
 'use strict'
-var ball1Size = 100
+// var ballSize = 100
 
-
-function onBallClick() {
-    var elBall = document.querySelector('.ball1')
-    ball1Size += getRandomInt(20, 60) 
-    if (ball1Size >= 400) ball1Size = 100
-
-    elBall.style.backgroundColor = getRandomColor()
-    elBall.style.height = ball1Size + 'px'
-    elBall.style.width = ball1Size  + 'px'
-    elBall.innerHTML = ball1Size
-
+function onBallClick(elBall) {
+    var elBallSize = elBall.offsetWidth
+        elBallSize += getRandomInt(20, 60)
+        if (elBallSize >= 400) elBallSize = 100
+    
+        elBall.style.backgroundColor = getRandomColor()
+        elBall.style.height = elBallSize + 'px'
+        elBall.style.width = elBallSize + 'px'
+        elBall.innerHTML = elBallSize
 }
