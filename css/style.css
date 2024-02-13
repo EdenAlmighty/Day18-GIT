@@ -7,10 +7,18 @@ body {
     color: rgb(241, 241, 241);
 }
 
-.ball {
+.ball1 {
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    color: rgb(47, 47, 47);
+    font-size: 22px;
+    font-weight: bold;
     height: 100px;
     width: 100px;
-    background-color: rgb(238, 238, 238);
     border-radius: 50%;
     margin: auto;
+    align-items: center;
+    justify-content: center;
+    
 }
+
