@@ -3,7 +3,7 @@
 const gBalls = document.querySelectorAll('.ball')
 var elBalls
 
-function onInit() {
+function createBalls() {
     elBalls = []
     for (var i = 0; i < gBalls.length; i++) {
         elBalls.push(gBalls[i])
@@ -20,8 +20,8 @@ function onBallClick(elBall, maxDiameter) {
         return
     }
     if (elBall === elBalls[3]) {
-        if (parseInt(elBalls[0].style.height) >= 100) changeBallSize(0)
-        if (parseInt(elBalls[1].style.height) >= 100) changeBallSize(1)
+      shrinkBall(0)
+      shrinkBall(1)
     } else {
         var elBallSize = elBall.offsetWidth
         elBallSize += getRandomInt(20, 60)
@@ -33,7 +33,7 @@ function onBallClick(elBall, maxDiameter) {
     }
 }
 
-function changeBallSize(i) {
+function shrinkBall(i) {
     var elBallSize = parseInt(elBalls[i].style.height)
     var ranDiff = getRandomInt(20, 60)
     if (elBallSize < 100) {
